@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa Barreirinho - Serra da Capivara</title>
+    <!-- Ícone do Site -->
+    <link rel="icon" href="https://github.com/vittinhofreitas/casabarreirinho/blob/main/ico.png?raw=true">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -45,7 +47,7 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
                     <img src="https://github.com/vittinhofreitas/casabarreirinho/blob/main/ico.png?raw=true" alt="Logo Casa Barreirinho" class="h-16 w-auto object-contain">
-                    <span class="text-xl md:text-2xl font-bold serif" style="color: #920b08;">Casa Barreirinho</span>
+                    <span class="text-xl md:text-2xl font-bold serif text-stone-900 hidden sm:block">Casa Barreirinho</span>
                 </div>
                 
                 <div class="flex items-center gap-6">
@@ -53,8 +55,8 @@
                     <div class="hidden md:flex items-center space-x-6">
                         <a href="#acomodacoes" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_accom">Acomodações</a>
                         <a href="#servicos" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_services">Serviços</a>
-                        <a href="#gastronomia" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_food">Gastronomia</a>
-                        <a href="#localizacao" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_loc">Localização</a>
+                        <a href="#galeria" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_gallery">Galeria</a>
+                        <a href="#probrasil" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_social">Impacto Social</a>
                     </div>
 
                     <!-- Language Switcher -->
@@ -84,7 +86,7 @@
                 Patrimônio da Humanidade <br><span class="italic font-light">ao seu alcance</span>
             </h1>
             <p class="text-lg md:text-2xl mb-10 max-w-2xl mx-auto font-light drop-shadow-md" data-i18n="hero_desc">
-                Localização privilegiada na porta do Parque Nacional da Serra da Capivara. Piscina, Wi-Fi 400Mbps e a melhor vista dos paredões.
+                Localização privilegiada na porta do Parque Nacional da Serra da Capivara. Piscina, Wi-Fi 100Mbps e a melhor vista dos paredões.
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center">
@@ -113,7 +115,7 @@
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold serif mb-8 text-white" data-i18n="video_title">Assista a este vídeo incrível</h2>
             <div class="relative w-full pb-[56.25%] h-0 rounded-xl overflow-hidden shadow-2xl border border-stone-800">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/X5uadfw2fJw?si=eXBthpT93OS6TjNu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/K3D4mn4Ao4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -348,6 +350,33 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-terracotta font-bold tracking-wider text-sm uppercase" data-i18n="nav_gallery">Galeria</span>
+                <h2 class="text-4xl font-bold text-stone-900 mt-2 serif" data-i18n="gallery_title">Nossa Galeria</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-auto md:h-[600px]">
+                <div class="col-span-2 md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-lg">
+                    <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1882.jpeg/:/rs=w:800,cg:true,m" alt="Vista Panorâmica" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_4942.jpeg/:/rs=w:400,cg:true,m" alt="Chalé" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_0907.jpeg/:/rs=w:400,cg:true,m" alt="Chalé Estrelas" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1814.jpeg/:/rs=w:400,cg:true,m" alt="Quarto" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1781.jpeg/:/rs=w:400,cg:true,m" alt="Quarto" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Social Impact Section (ProBrasil) -->
     <section id="probrasil" class="py-20 bg-stone-900 text-white relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-16 items-center">
@@ -360,7 +389,7 @@
                 <div class="flex flex-col gap-4">
                     <div class="border-l-4 border-terracotta pl-4">
                         <p class="font-bold text-xl" data-i18n="soc_edu_title">Educação</p>
-                        <p class="text-sm text-stone-400" data-i18n="soc_edu_desc">Apoio direto a escolas e crianças da região.</p>
+                        <p class="text-sm text-stone-400" data-i18n="soc_edu_desc">Capacitação voltada para jovens e adultos da região.</p>
                     </div>
                     <div class="border-l-4 border-terracotta pl-4">
                         <p class="font-bold text-xl" data-i18n="soc_dev_title">Desenvolvimento</p>
@@ -369,7 +398,8 @@
                 </div>
             </div>
             <div class="relative">
-                 <img src="https://hostelserradacapivara.com/imgs/social/images/social_34.jpg" class="rounded-lg opacity-80 shadow-2xl grayscale hover:grayscale-0 transition duration-700" alt="Crianças projeto social">
+                 <!-- Updated Image -->
+                 <img src="https://hostelserradacapivara.com/imgs/social/images/social_34.jpg" class="rounded-lg opacity-90 shadow-2xl grayscale hover:grayscale-0 transition duration-700 w-full object-cover" alt="Crianças projeto social">
                  <div class="absolute -bottom-6 -right-6 bg-terracotta p-6 rounded-lg shadow-lg max-w-xs hidden md:block">
                     <p class="text-white font-bold italic" data-i18n="soc_quote">"O turismo sustentável é aquele que deixa a floresta em pé e a comunidade forte."</p>
                  </div>
@@ -380,7 +410,15 @@
     <!-- Map & Contact Section -->
     <section id="localizacao" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold serif text-center mb-8 text-stone-900" data-i18n="map_title">Como Chegar</h2>
+            <h2 class="text-3xl font-bold serif text-center mb-4 text-stone-900" data-i18n="map_title">Onde Estamos Localizados</h2>
+            
+            <div class="text-center mb-8">
+                <a href="https://maps.google.com/maps?daddr=Estrada%20de%20Acesso%20ao%20Parque%20Nacional%20Serra%20da%20Capivara,%20Barreirinho,%20Coronel%20José%20Dias/PI,%20Brasil,%20CEP%2064793-000" target="_blank" class="inline-flex items-center gap-2 bg-terracotta hover:bg-stone-800 text-white px-6 py-3 rounded-full font-bold shadow-md transition-colors">
+                    <i data-lucide="map" class="w-5 h-5"></i>
+                    <span data-i18n="btn_directions">Como Chegar?</span>
+                </a>
+            </div>
+
             <p class="text-center text-stone-600 mb-8 max-w-2xl mx-auto" data-i18n="address_full">Estrada de Acesso ao Parque Nacional Serra da Capivara, Barreirinho, Coronel José Dias/PI, Brasil, CEP 64793-000</p>
             <div class="w-full h-[450px] bg-stone-200 rounded-lg overflow-hidden shadow-lg">
                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7885.355237389841!2d-42.514071057105596!3d-8.816325758702664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77759d31d4ed1bd%3A0x4f8ac74c1fec7709!2sCasa%20Barreirinho%20-%20Parque%20Nacional%20Serra%20da%20Capivara!5e0!3m2!1spt-BR!2sus!4v1767705545372!5m2!1spt-BR!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -417,7 +455,7 @@
             </div>
             <div>
                  <h4 class="text-white font-bold mb-4" data-i18n="foot_newsletter">Newsletter</h4>
-                 <p class="text-xs mb-2" data-i18n="foot_newsletter_desc">Receba promoções e novidades do Parque.</p>
+                 <p class="text-xs mb-2" data-i18n="foot_newsletter_desc">Receba promoções e novidades.</p>
                  <div class="flex">
                      <input type="email" placeholder="E-mail" class="bg-stone-900 border border-stone-700 px-3 py-2 rounded-l w-full text-sm focus:outline-none focus:border-terracotta">
                      <button class="bg-terracotta text-white px-3 py-2 rounded-r hover:bg-opacity-90 font-bold">OK</button>
@@ -440,10 +478,11 @@
                 nav_services: "Serviços",
                 nav_food: "Gastronomia",
                 nav_social: "Impacto Social",
+                nav_gallery: "Galeria",
                 nav_loc: "Localização",
                 nav_reserve: "Reservar",
                 hero_title_html: 'Patrimônio da Humanidade <br><span class="italic font-light">ao seu alcance</span>',
-                hero_desc: "Localização privilegiada na porta do Parque Nacional da Serra da Capivara. Piscina, Wi-Fi 400Mbps e a melhor vista dos paredões.",
+                hero_desc: "Localização privilegiada na porta do Parque Nacional da Serra da Capivara. Piscina, Wi-Fi 100Mbps e a melhor vista dos paredões.",
                 hero_btn_check: "Verificar Disponibilidade",
                 hero_btn_rooms: "Conhecer os Quartos",
                 feat_wifi: "Internet 100 Mbps",
@@ -493,6 +532,7 @@
                 serv_poles: "Bastões de Caminhada",
                 serv_poles_desc: "Modernos e ajustáveis para seu conforto.",
                 serv_poles_price: "R$ 10,00 / dia",
+                gallery_title: "Nossa Galeria",
                 soc_tag: "Turismo com Propósito",
                 soc_title: "Sua estadia transforma vidas",
                 soc_desc: "A Casa Barreirinho é um empreendimento conectado à <strong>ProBrasil Nordeste</strong>. Parte da receita é reinvestida diretamente nos projetos educacionais e sociais em Coronel José Dias. Ao se hospedar aqui, você ajuda a manter viva a cultura e a educação local.",
@@ -502,6 +542,7 @@
                 soc_dev_desc: "Geração de renda e emprego para a comunidade local.",
                 soc_quote: '"O turismo sustentável é aquele que deixa a floresta em pé e a comunidade forte."',
                 map_title: "Como Chegar",
+                btn_directions: "Como Chegar?",
                 address_full: "Estrada de Acesso ao Parque Nacional Serra da Capivara, Barreirinho, Coronel José Dias/PI, Brasil, CEP 64793-000",
                 hero_desc_short: "Estrada de acesso principal ao Parque Nacional. Próximo à Pedra Furada e Museu da Natureza.",
                 foot_contact: "Fale Conosco",
@@ -518,10 +559,11 @@
                 nav_services: "Services",
                 nav_food: "Gastronomy",
                 nav_social: "Social Impact",
+                nav_gallery: "Gallery",
                 nav_loc: "Location",
                 nav_reserve: "Book Now",
                 hero_title_html: 'World Heritage <br><span class="italic font-light">within your reach</span>',
-                hero_desc: "Privileged location at the gateway to Serra da Capivara National Park. Pool, 400Mbps Wi-Fi and the best view of the cliffs.",
+                hero_desc: "Privileged location at the gateway to Serra da Capivara National Park. Pool, 100Mbps Wi-Fi and the best view of the cliffs.",
                 hero_btn_check: "Check Availability",
                 hero_btn_rooms: "See Rooms",
                 feat_wifi: "100 Mbps Internet",
@@ -571,6 +613,7 @@
                 serv_poles: "Trekking Poles",
                 serv_poles_desc: "Modern and adjustable for your comfort.",
                 serv_poles_price: "R$ 10.00 / day",
+                gallery_title: "Our Gallery",
                 soc_tag: "Tourism with Purpose",
                 soc_title: "Your Stay Transforms Lives",
                 soc_desc: "Casa Barreirinho is a social enterprise connected to <strong>ProBrasil Nordeste</strong>. Part of the revenue is reinvested directly into educational and social projects in Coronel José Dias. By staying here, you help keep local culture and education alive.",
@@ -580,6 +623,7 @@
                 soc_dev_desc: "Income and employment generation for the local community.",
                 soc_quote: '"Sustainable tourism is what leaves the forest standing and the community strong."',
                 map_title: "How to Get Here",
+                btn_directions: "Get Directions",
                 address_full: "Access Road to Serra da Capivara National Park, Barreirinho, Coronel José Dias/PI, Brazil, ZIP 64793-000",
                 hero_desc_short: "Main access road to the National Park. Near Pedra Furada and Museum of Nature.",
                 foot_contact: "Contact Us",
@@ -596,6 +640,7 @@
                 nav_services: "Dienstleistungen",
                 nav_food: "Gastronomie",
                 nav_social: "Soziales Engagement",
+                nav_gallery: "Galerie",
                 nav_loc: "Standort",
                 nav_reserve: "Buchen",
                 hero_title_html: 'Weltkulturerbe <br><span class="italic font-light">zum Greifen nah</span>',
@@ -649,6 +694,7 @@
                 serv_poles: "Wanderstöcke",
                 serv_poles_desc: "Modern und verstellbar für Ihren Komfort.",
                 serv_poles_price: "R$ 10,00 / Tag",
+                gallery_title: "Unsere Galerie",
                 soc_tag: "Tourismus mit Zweck",
                 soc_title: "Ihr Aufenthalt verändert Leben",
                 soc_desc: "Casa Barreirinho ist ein soziales Unternehmen, das mit <strong>ProBrasil Nordeste</strong> verbunden ist. Ein Teil der Einnahmen fließt direkt in Bildungs- und Sozialprojekte in Coronel José Dias. Mit Ihrem Aufenthalt helfen Sie, die lokale Kultur und Bildung lebendig zu erhalten.",
@@ -658,6 +704,7 @@
                 soc_dev_desc: "Einkommens- und Beschäftigungsschaffung für die lokale Gemeinschaft.",
                 soc_quote: '"Nachhaltiger Tourismus ist der, der den Wald stehen lässt und die Gemeinschaft stärkt."',
                 map_title: "Anfahrt",
+                btn_directions: "Anfahrt",
                 address_full: "Zufahrtsstraße zum Nationalpark Serra da Capivara, Barreirinho, Coronel José Dias/PI, Brasilien, PLZ 64793-000",
                 hero_desc_short: "Hauptzufahrtsstraße zum Nationalpark. In der Nähe von Pedra Furada und dem Museum der Natur.",
                 foot_contact: "Kontaktieren Sie uns",
