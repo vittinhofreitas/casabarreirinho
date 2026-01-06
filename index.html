@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Barreirinho - Serra da Capivara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1882.jpeg/:/rs=w:1920,m'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .text-terracotta { color: #A0522D; }
+        .bg-terracotta { background-color: #A0522D; }
+        .btn-reserve {
+            background-color: #A0522D;
+            transition: all 0.3s ease;
+        }
+        .btn-reserve:hover {
+            background-color: #8B4513;
+            transform: translateY(-2px);
+        }
+        .price-badge {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+        }
+        .lang-btn.active {
+            font-weight: bold;
+            color: #A0522D;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="https://github.com/vittinhofreitas/casabarreirinho/blob/main/ico.png?raw=true" alt="Logo Casa Barreirinho" class="h-16 w-auto object-contain">
+                    <span class="text-xl md:text-2xl font-bold serif" style="color: #920b08;">Casa Barreirinho</span>
+                </div>
+                
+                <div class="flex items-center gap-6">
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#acomodacoes" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_accom">Acomodações</a>
+                        <a href="#servicos" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_services">Serviços</a>
+                        <a href="#gastronomia" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_food">Gastronomia</a>
+                        <a href="#localizacao" class="text-stone-600 hover:text-terracotta transition text-sm uppercase tracking-wide font-bold" data-i18n="nav_loc">Localização</a>
+                    </div>
+
+                    <!-- Language Switcher -->
+                    <div class="flex items-center gap-2 text-sm border-l border-stone-300 pl-4 ml-2">
+                        <button onclick="changeLanguage('pt')" class="lang-btn hover:text-terracotta transition active" id="btn-pt">PT</button>
+                        <span class="text-stone-300">|</span>
+                        <button onclick="changeLanguage('en')" class="lang-btn hover:text-terracotta transition" id="btn-en">EN</button>
+                        <span class="text-stone-300">|</span>
+                        <button onclick="changeLanguage('de')" class="lang-btn hover:text-terracotta transition" id="btn-de">DE</button>
+                    </div>
+
+                    <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="hidden md:flex btn-reserve text-white px-6 py-2 rounded-full font-semibold shadow-lg items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> <span data-i18n="nav_reserve">Reservar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl text-white pt-16 animate-fade-in-up">
+            <div class="inline-block border border-white/30 bg-black/20 backdrop-blur-sm px-4 py-1 rounded-full mb-6">
+                <p class="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-white">Coronel José Dias - Piauí</p>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg" data-i18n="hero_title_html">
+                Patrimônio da Humanidade <br><span class="italic font-light">ao seu alcance</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 max-w-2xl mx-auto font-light drop-shadow-md" data-i18n="hero_desc">
+                Localização privilegiada na porta do Parque Nacional da Serra da Capivara. Piscina, Wi-Fi 400Mbps e a melhor vista dos paredões.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="btn-reserve text-white px-8 py-4 rounded-full font-bold shadow-xl text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                    <span data-i18n="hero_btn_check">Verificar Disponibilidade</span>
+                </a>
+                <a href="#acomodacoes" class="bg-white text-stone-900 px-8 py-4 rounded-full font-bold shadow-xl text-lg flex items-center justify-center gap-2 hover:bg-stone-100 transition-colors">
+                    <span data-i18n="hero_btn_rooms">Conhecer os Quartos</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Strip -->
+    <div class="bg-stone-900 text-stone-300 py-6 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16 text-sm font-bold uppercase tracking-wider">
+            <div class="flex items-center gap-2"><i data-lucide="wifi" class="text-terracotta"></i> <span data-i18n="feat_wifi">Internet 100 Mbps</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="waves" class="text-terracotta"></i> <span data-i18n="feat_pool">Piscina Exclusiva</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="map-pin" class="text-terracotta"></i> <span data-i18n="feat_museum">Ao lado do Museu</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="star" class="text-terracotta"></i> <span data-i18n="feat_rating">Nota 9.4 Booking</span></div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-stone-950 text-white text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold serif mb-8 text-white" data-i18n="video_title">Assista a este vídeo incrível</h2>
+            <div class="relative w-full pb-[56.25%] h-0 rounded-xl overflow-hidden shadow-2xl border border-stone-800">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/X5uadfw2fJw?si=eXBthpT93OS6TjNu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations Section -->
+    <section id="acomodacoes" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-terracotta font-bold tracking-wider text-sm uppercase" data-i18n="acc_tag">Nossas Acomodações</span>
+                <h2 class="text-4xl font-bold text-stone-900 mt-2 serif" data-i18n="acc_title">Escolha seu Refúgio</h2>
+                <p class="text-stone-600 mt-4 max-w-2xl mx-auto" data-i18n="acc_desc">Do charme dos chalés à economia das suítes. Todos os quartos possuem ar-condicionado e frigobar.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Chalé Vista da Serra -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_4942.jpeg/:/rs=w:800,h:600,cg:true,m" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Chalé Vista">
+                        <div class="absolute top-4 right-4 price-badge px-3 py-1 rounded-md text-sm font-bold shadow-sm text-stone-900">
+                            R$ 280<span class="text-xs font-normal" data-i18n="per_night">/noite</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-terracotta text-white text-xs font-bold px-2 py-1 rounded uppercase" data-i18n="badge_exclusive">Mais Exclusivo</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-2 serif">Chalé Vista da Serra</h3>
+                        <p class="text-stone-600 text-sm mb-4 line-clamp-3" data-i18n="room_vista_desc">
+                            No ponto mais alto da propriedade. Vista panorâmica para os paredões. Cama Queen + Solteiro, cozinha externa e varanda.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-stone-100 flex justify-between items-center">
+                            <span class="text-xs text-stone-500 flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i> <span data-i18n="cap_4">Até 4 pessoas</span></span>
+                            <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="text-terracotta font-bold text-sm hover:underline"><span data-i18n="btn_book">Reservar</span> &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chalé das Estrelas -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_0907.jpeg/:/rs=w:800,h:600,cg:true,m" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Chalé Estrelas">
+                        <div class="absolute top-4 right-4 price-badge px-3 py-1 rounded-md text-sm font-bold shadow-sm text-stone-900">
+                            R$ 240<span class="text-xs font-normal" data-i18n="per_night">/noite</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-2 serif">Chalé das Estrelas</h3>
+                        <p class="text-stone-600 text-sm mb-4 line-clamp-3" data-i18n="room_stars_desc">
+                            Contato direto com a natureza e vista mágica para o céu estrelado do sertão. Cama Queen + Solteiro e cozinha externa.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-stone-100 flex justify-between items-center">
+                            <span class="text-xs text-stone-500 flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i> <span data-i18n="cap_4">Até 4 pessoas</span></span>
+                            <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="text-terracotta font-bold text-sm hover:underline"><span data-i18n="btn_book">Reservar</span> &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suíte Toca do Felipe -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1814.jpeg/:/rs=w:800,h:600,cg:true,m" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Suíte Felipe">
+                        <div class="absolute top-4 right-4 price-badge px-3 py-1 rounded-md text-sm font-bold shadow-sm text-stone-900">
+                            R$ 220<span class="text-xs font-normal" data-i18n="per_night">/noite</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-2 serif">Suíte Toca do Felipe</h3>
+                        <p class="text-stone-600 text-sm mb-4 line-clamp-3" data-i18n="room_felipe_desc">
+                            Nossa maior suíte. Vista excepcional para o Grotão da Esperança. Cama Queen + Solteiro expansível e banheiro privativo interno.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-stone-100 flex justify-between items-center">
+                            <span class="text-xs text-stone-500 flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i> <span data-i18n="cap_4">Até 4 pessoas</span></span>
+                            <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="text-terracotta font-bold text-sm hover:underline"><span data-i18n="btn_book">Reservar</span> &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suíte Toca da Mika -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1781.jpeg/:/rs=w:800,h:600,cg:true,m" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Suíte Mika">
+                        <div class="absolute top-4 right-4 price-badge px-3 py-1 rounded-md text-sm font-bold shadow-sm text-stone-900">
+                            R$ 190<span class="text-xs font-normal" data-i18n="per_night">/noite</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-2 serif">Suíte Toca da Mika</h3>
+                        <p class="text-stone-600 text-sm mb-4 line-clamp-3" data-i18n="room_mika_desc">
+                            Aconchegante com janela para a varanda. Cama de casal + solteiro e banheiro privativo.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-stone-100 flex justify-between items-center">
+                            <span class="text-xs text-stone-500 flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i> <span data-i18n="cap_3">Até 3 pessoas</span></span>
+                            <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="text-terracotta font-bold text-sm hover:underline"><span data-i18n="btn_book">Reservar</span> &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quarto Toca do Daco -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_1802.jpeg/:/rs=w:800,h:600,cg:true,m" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Toca Daco">
+                        <div class="absolute top-4 right-4 price-badge px-3 py-1 rounded-md text-sm font-bold shadow-sm text-stone-900">
+                            R$ 180<span class="text-xs font-normal" data-i18n="per_night">/noite</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-stone-800 text-white text-xs font-bold px-2 py-1 rounded uppercase" data-i18n="badge_bestprice">Melhor Preço</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-2 serif">Quarto Toca do Daco</h3>
+                        <p class="text-stone-600 text-sm mb-4 line-clamp-3" data-i18n="room_daco_desc">
+                            Opção econômica com vista para os paredões. Banheiro privativo externo (ao lado do quarto).
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-stone-100 flex justify-between items-center">
+                            <span class="text-xs text-stone-500 flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i> <span data-i18n="cap_3">Até 3 pessoas</span></span>
+                            <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="text-terracotta font-bold text-sm hover:underline"><span data-i18n="btn_book">Reservar</span> &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Casa Inteira -->
+                <div class="bg-stone-900 text-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group flex flex-col relative">
+                    <div class="relative h-64 overflow-hidden opacity-80">
+                         <img src="https://img1.wsimg.com/isteam/ip/9199c7ce-2a89-453e-a109-4e66a4cc6d99/IMG_8469-d9a0853.jpeg/:/rs=w:800,h:600,cg:true,m" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Casa Inteira">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col relative z-10">
+                        <h3 class="text-xl font-bold mb-2 serif text-white" data-i18n="room_house_title">Casa Barreirinho (Inteira)</h3>
+                        <p class="text-stone-300 text-sm mb-4" data-i18n="room_house_desc">
+                            Privacidade total para sua família ou grupo. 3 quartos, sala, cozinha completa e estrutura exclusiva.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-stone-700 flex justify-between items-center">
+                            <div>
+                                <span class="block text-2xl font-bold">R$ 650</span>
+                                <span class="text-xs text-stone-400" data-i18n="cap_6">Até 6 pessoas</span>
+                            </div>
+                            <a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="bg-white text-stone-900 px-4 py-2 rounded font-bold text-sm hover:bg-terracotta hover:text-white transition" data-i18n="btn_consult">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+             <p class="text-center text-xs text-stone-500 mt-8" data-i18n="acc_note">* Preços médios de referência para 2 pessoas (exceto casa inteira). Valores podem variar conforme a temporada. Pessoa adicional: R$ 80,00.</p>
+        </div>
+    </section>
+
+    <!-- Gastronomy & Services Split Section -->
+    <section id="servicos" class="grid md:grid-cols-2 bg-white">
+        <!-- Gastronomy -->
+        <div class="p-12 md:p-20 bg-terracotta/5 flex flex-col justify-center" id="gastronomia">
+            <span class="text-terracotta font-bold tracking-wider text-sm uppercase mb-4" data-i18n="gas_tag">Sabores do Sertão</span>
+            <h2 class="text-4xl font-bold text-stone-900 mb-6 serif" data-i18n="gas_title">Culinária Afetiva</h2>
+            <p class="text-stone-600 mb-8 leading-relaxed" data-i18n="gas_desc">
+                Nossa cozinheira <strong>Dayane Dallas</strong> prepara pratos com ingredientes locais e muito carinho. O café da manhã inclui frutas frescas, tapioca, cuscuz e pão de fermentação natural.
+            </p>
+            <div class="space-y-4 bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+                <div class="flex justify-between items-center border-b border-stone-100 pb-2">
+                    <span class="font-bold text-stone-800" data-i18n="gas_breakfast">Café da Manhã</span>
+                    <span class="text-terracotta font-bold">R$ 25,00</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-100 pb-2">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-stone-800" data-i18n="gas_lunch">Almoço ou Jantar</span>
+                        <span class="text-xs text-stone-500" data-i18n="gas_lunch_note">Solicitar até às 16h do dia anterior</span>
+                    </div>
+                    <span class="text-terracotta font-bold">R$ 40,00</span>
+                </div>
+                <div class="flex justify-between items-center pb-2">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-stone-800" data-i18n="gas_snack">Lanche para Trilha</span>
+                        <span class="text-xs text-stone-500" data-i18n="gas_snack_note">Pão natural, frios, cuscuz</span>
+                    </div>
+                    <span class="text-terracotta font-bold">R$ 25,00</span>
+                </div>
+            </div>
+            <div class="mt-6 flex items-center gap-2 text-sm text-stone-500">
+                <i data-lucide="chef-hat" class="w-4 h-4"></i>
+                <span data-i18n="gas_kitchen_fee">Taxa de uso da cozinha própria: R$ 10,00/pessoa</span>
+            </div>
+        </div>
+
+        <!-- Extra Services -->
+        <div class="p-12 md:p-20 flex flex-col justify-center">
+             <span class="text-stone-400 font-bold tracking-wider text-sm uppercase mb-4" data-i18n="serv_tag">Aventure-se</span>
+             <h2 class="text-4xl font-bold text-stone-900 mb-6 serif" data-i18n="serv_title">Serviços & Extras</h2>
+             
+             <div class="grid gap-6">
+                <!-- Transfer -->
+                <div class="flex gap-4 items-start">
+                    <div class="bg-stone-100 p-3 rounded-full text-stone-900">
+                        <i data-lucide="plane" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg" data-i18n="serv_transfer">Transfer Aeroporto Petrolina</h4>
+                        <p class="text-stone-600 text-sm" data-i18n="serv_transfer_desc">Translado seguro e confortável.</p>
+                        <p class="text-terracotta font-bold text-sm mt-1" data-i18n="serv_transfer_price">R$ 650 (Trecho) | R$ 1200 (Ida e Volta)</p>
+                    </div>
+                </div>
+
+                <!-- Bikes -->
+                <div class="flex gap-4 items-start">
+                    <div class="bg-stone-100 p-3 rounded-full text-stone-900">
+                        <i data-lucide="bike" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg" data-i18n="serv_bike">Locação de Mountain Bike</h4>
+                        <p class="text-stone-600 text-sm" data-i18n="serv_bike_desc">Explore as trilhas sobre duas rodas. Desconto para 2 bikes.</p>
+                        <p class="text-terracotta font-bold text-sm mt-1" data-i18n="serv_bike_price">R$ 60,00 / dia</p>
+                    </div>
+                </div>
+
+                <!-- Laundry -->
+                <div class="flex gap-4 items-start">
+                    <div class="bg-stone-100 p-3 rounded-full text-stone-900">
+                        <i data-lucide="shirt" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg" data-i18n="serv_laundry">Lavanderia</h4>
+                        <p class="text-stone-600 text-sm" data-i18n="serv_laundry_desc">Máquina moderna. Inclui sabão e amaciante.</p>
+                        <p class="text-terracotta font-bold text-sm mt-1" data-i18n="serv_laundry_price">R$ 20,00 / uso</p>
+                    </div>
+                </div>
+                
+                 <!-- Poles -->
+                 <div class="flex gap-4 items-start">
+                    <div class="bg-stone-100 p-3 rounded-full text-stone-900">
+                        <i data-lucide="mountain-snow" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg" data-i18n="serv_poles">Bastões de Caminhada</h4>
+                        <p class="text-stone-600 text-sm" data-i18n="serv_poles_desc">Modernos e ajustáveis para seu conforto.</p>
+                        <p class="text-terracotta font-bold text-sm mt-1" data-i18n="serv_poles_price">R$ 10,00 / dia</p>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Social Impact Section (ProBrasil) -->
+    <section id="probrasil" class="py-20 bg-stone-900 text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-terracotta font-bold tracking-wider text-sm uppercase" data-i18n="soc_tag">Turismo com Propósito</span>
+                <h2 class="text-4xl font-bold mt-2 mb-6 serif" data-i18n="soc_title">Sua estadia transforma vidas</h2>
+                <p class="text-stone-300 text-lg leading-relaxed mb-8" data-i18n="soc_desc">
+                    A Casa Barreirinho é um empreendimento conectado à <strong>ProBrasil Nordeste</strong>. Parte da receita é reinvestida diretamente nos projetos educacionais e sociais em Coronel José Dias. Ao se hospedar aqui, você ajuda a manter viva a cultura e a educação local.
+                </p>
+                <div class="flex flex-col gap-4">
+                    <div class="border-l-4 border-terracotta pl-4">
+                        <p class="font-bold text-xl" data-i18n="soc_edu_title">Educação</p>
+                        <p class="text-sm text-stone-400" data-i18n="soc_edu_desc">Apoio direto a escolas e crianças da região.</p>
+                    </div>
+                    <div class="border-l-4 border-terracotta pl-4">
+                        <p class="font-bold text-xl" data-i18n="soc_dev_title">Desenvolvimento</p>
+                        <p class="text-sm text-stone-400" data-i18n="soc_dev_desc">Geração de renda e emprego para a comunidade local.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                 <img src="https://hostelserradacapivara.com/imgs/social/images/social_34.jpg" class="rounded-lg opacity-80 shadow-2xl grayscale hover:grayscale-0 transition duration-700" alt="Crianças projeto social">
+                 <div class="absolute -bottom-6 -right-6 bg-terracotta p-6 rounded-lg shadow-lg max-w-xs hidden md:block">
+                    <p class="text-white font-bold italic" data-i18n="soc_quote">"O turismo sustentável é aquele que deixa a floresta em pé e a comunidade forte."</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="localizacao" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold serif text-center mb-8 text-stone-900" data-i18n="map_title">Como Chegar</h2>
+            <p class="text-center text-stone-600 mb-8 max-w-2xl mx-auto" data-i18n="address_full">Estrada de Acesso ao Parque Nacional Serra da Capivara, Barreirinho, Coronel José Dias/PI, Brasil, CEP 64793-000</p>
+            <div class="w-full h-[450px] bg-stone-200 rounded-lg overflow-hidden shadow-lg">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7885.355237389841!2d-42.514071057105596!3d-8.816325758702664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77759d31d4ed1bd%3A0x4f8ac74c1fec7709!2sCasa%20Barreirinho%20-%20Parque%20Nacional%20Serra%20da%20Capivara!5e0!3m2!1spt-BR!2sus!4v1767705545372!5m2!1spt-BR!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-800" id="contato">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white text-xl font-bold serif mb-4">Casa Barreirinho</h3>
+                <p class="text-sm">Coronel José Dias - Piauí</p>
+                <p class="text-sm mt-2 text-stone-500" data-i18n="hero_desc_short">Estrada de acesso principal ao Parque Nacional. Próximo à Pedra Furada e Museu da Natureza.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4" data-i18n="foot_contact">Fale Conosco</h4>
+                <a href="https://wa.me/5589981330000" class="flex items-center gap-2 mb-3 hover:text-white transition">
+                    <i data-lucide="phone" class="w-4 h-4 text-terracotta"></i> +55 89 98133-0000
+                </a>
+                <p class="flex items-center gap-2 mb-3"><i data-lucide="mail" class="w-4 h-4 text-terracotta"></i> info@serradacapivara.info</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://www.instagram.com/casabarreirinho" target="_blank"><i data-lucide="instagram" class="w-6 h-6 hover:text-terracotta cursor-pointer transition"></i></a>
+                    <i data-lucide="facebook" class="w-6 h-6 hover:text-terracotta cursor-pointer transition"></i>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4" data-i18n="foot_links">Links Úteis</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://hotels.cloudbeds.com/reservas/pb0SdK" target="_blank" class="hover:text-terracotta" data-i18n="nav_reserve">Reservar Agora</a></li>
+                    <li><a href="#" class="hover:text-white" data-i18n="foot_policy">Política de Cancelamento</a></li>
+                    <li><a href="#localizacao" class="hover:text-white" data-i18n="foot_directions">Como Chegar</a></li>
+                </ul>
+            </div>
+            <div>
+                 <h4 class="text-white font-bold mb-4" data-i18n="foot_newsletter">Newsletter</h4>
+                 <p class="text-xs mb-2" data-i18n="foot_newsletter_desc">Receba promoções e novidades do Parque.</p>
+                 <div class="flex">
+                     <input type="email" placeholder="E-mail" class="bg-stone-900 border border-stone-700 px-3 py-2 rounded-l w-full text-sm focus:outline-none focus:border-terracotta">
+                     <button class="bg-terracotta text-white px-3 py-2 rounded-r hover:bg-opacity-90 font-bold">OK</button>
+                 </div>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-stone-900 text-xs flex flex-col md:flex-row justify-between items-center px-4">
+            <p>&copy; 2026 Casa Barreirinho. <span data-i18n="foot_rights">Todos os direitos reservados.</span></p>
+            <p class="mt-2 md:mt-0 text-stone-600" data-i18n="foot_dev">Desenvolvido com apoio da ProBrasil</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Translation Dictionary
+        const translations = {
+            pt: {
+                nav_accom: "Acomodações",
+                nav_services: "Serviços",
+                nav_food: "Gastronomia",
+                nav_social: "Impacto Social",
+                nav_loc: "Localização",
+                nav_reserve: "Reservar",
+                hero_title_html: 'Patrimônio da Humanidade <br><span class="italic font-light">ao seu alcance</span>',
+                hero_desc: "Localização privilegiada na porta do Parque Nacional da Serra da Capivara. Piscina, Wi-Fi 400Mbps e a melhor vista dos paredões.",
+                hero_btn_check: "Verificar Disponibilidade",
+                hero_btn_rooms: "Conhecer os Quartos",
+                feat_wifi: "Internet 100 Mbps",
+                feat_pool: "Piscina Exclusiva",
+                feat_museum: "Ao lado do Museu",
+                feat_rating: "Nota 9.4 Booking",
+                video_title: "Assista a este vídeo incrível",
+                acc_tag: "Nossas Acomodações",
+                acc_title: "Escolha seu Refúgio",
+                acc_desc: "Do charme dos chalés à economia das suítes. Todos os quartos possuem ar-condicionado e frigobar.",
+                per_night: "/noite",
+                badge_exclusive: "Mais Exclusivo",
+                badge_bestprice: "Melhor Preço",
+                room_vista_desc: "No ponto mais alto da propriedade. Vista panorâmica para os paredões. Cama Queen + Solteiro, cozinha externa e varanda.",
+                cap_4: "Até 4 pessoas",
+                btn_book: "Reservar",
+                room_stars_desc: "Contato direto com a natureza e vista mágica para o céu estrelado do sertão. Cama Queen + Solteiro e cozinha externa.",
+                room_felipe_desc: "Nossa maior suíte. Vista excepcional para o Grotão da Esperança. Cama Queen + Solteiro expansível e banheiro privativo interno.",
+                room_mika_desc: "Aconchegante com janela para a varanda. Cama de casal + solteiro e banheiro privativo.",
+                cap_3: "Até 3 pessoas",
+                room_daco_desc: "Opção econômica com vista para os paredões. Banheiro privativo externo (ao lado do quarto).",
+                room_house_title: "Casa Barreirinho (Inteira)",
+                room_house_desc: "Privacidade total para sua família ou grupo. 3 quartos, sala, cozinha completa e estrutura exclusiva.",
+                cap_6: "Até 6 pessoas",
+                btn_consult: "Consultar",
+                acc_note: "* Preços médios de referência para 2 pessoas (exceto casa inteira). Valores podem variar conforme a temporada. Pessoa adicional: R$ 80,00. Crianças: Bebês < 2 anos grátis. 2-12 anos pagam 50% do adicional.",
+                gas_tag: "Sabores do Sertão",
+                gas_title: "Culinária Afetiva",
+                gas_desc: "Nossa cozinheira <strong>Dayane Dallas</strong> prepara pratos com ingredientes locais e muito carinho. O café da manhã inclui frutas frescas, tapioca, cuscuz e pão de fermentação natural.",
+                gas_breakfast: "Café da Manhã",
+                gas_lunch: "Almoço ou Jantar",
+                gas_lunch_note: "Solicitar até às 16h do dia anterior",
+                gas_snack: "Lanche para Trilha",
+                gas_snack_note: "Pão natural, frios, cuscuz",
+                gas_kitchen_fee: "Taxa de uso da cozinha própria: R$ 10,00/pessoa",
+                serv_tag: "Aventure-se",
+                serv_title: "Serviços & Extras",
+                serv_transfer: "Transfer Aeroporto Petrolina",
+                serv_transfer_desc: "Translado seguro e confortável.",
+                serv_transfer_price: "R$ 650 (Trecho) | R$ 1200 (Ida e Volta)",
+                serv_bike: "Locação de Mountain Bike",
+                serv_bike_desc: "Explore as trilhas sobre duas rodas. Desconto para 2 bikes.",
+                serv_bike_price: "R$ 60,00 / dia",
+                serv_laundry: "Lavanderia",
+                serv_laundry_desc: "Máquina moderna. Inclui sabão e amaciante.",
+                serv_laundry_price: "R$ 20,00 / uso",
+                serv_poles: "Bastões de Caminhada",
+                serv_poles_desc: "Modernos e ajustáveis para seu conforto.",
+                serv_poles_price: "R$ 10,00 / dia",
+                soc_tag: "Turismo com Propósito",
+                soc_title: "Sua estadia transforma vidas",
+                soc_desc: "A Casa Barreirinho é um empreendimento conectado à <strong>ProBrasil Nordeste</strong>. Parte da receita é reinvestida diretamente nos projetos educacionais e sociais em Coronel José Dias. Ao se hospedar aqui, você ajuda a manter viva a cultura e a educação local.",
+                soc_edu_title: "Educação",
+                soc_edu_desc: "Apoio direto a escolas e crianças da região.",
+                soc_dev_title: "Desenvolvimento",
+                soc_dev_desc: "Geração de renda e emprego para a comunidade local.",
+                soc_quote: '"O turismo sustentável é aquele que deixa a floresta em pé e a comunidade forte."',
+                map_title: "Como Chegar",
+                address_full: "Estrada de Acesso ao Parque Nacional Serra da Capivara, Barreirinho, Coronel José Dias/PI, Brasil, CEP 64793-000",
+                hero_desc_short: "Estrada de acesso principal ao Parque Nacional. Próximo à Pedra Furada e Museu da Natureza.",
+                foot_contact: "Fale Conosco",
+                foot_links: "Links Úteis",
+                foot_policy: "Política de Cancelamento",
+                foot_directions: "Como Chegar",
+                foot_newsletter: "Newsletter",
+                foot_newsletter_desc: "Receba promoções e novidades do Parque.",
+                foot_rights: "Todos os direitos reservados.",
+                foot_dev: "Desenvolvido com apoio da ProBrasil"
+            },
+            en: {
+                nav_accom: "Accommodations",
+                nav_services: "Services",
+                nav_food: "Gastronomy",
+                nav_social: "Social Impact",
+                nav_loc: "Location",
+                nav_reserve: "Book Now",
+                hero_title_html: 'World Heritage <br><span class="italic font-light">within your reach</span>',
+                hero_desc: "Privileged location at the gateway to Serra da Capivara National Park. Pool, 400Mbps Wi-Fi and the best view of the cliffs.",
+                hero_btn_check: "Check Availability",
+                hero_btn_rooms: "See Rooms",
+                feat_wifi: "100 Mbps Internet",
+                feat_pool: "Exclusive Pool",
+                feat_museum: "Next to the Museum",
+                feat_rating: "9.4 Booking Rating",
+                video_title: "Watch this amazing video",
+                acc_tag: "Our Accommodations",
+                acc_title: "Choose Your Refuge",
+                acc_desc: "From charming chalets to economical suites. All rooms feature air conditioning and a minibar.",
+                per_night: "/night",
+                badge_exclusive: "Most Exclusive",
+                badge_bestprice: "Best Price",
+                room_vista_desc: "At the highest point of the property. Panoramic view of the cliffs. Queen bed + Single, outdoor kitchen and balcony.",
+                cap_4: "Up to 4 guests",
+                btn_book: "Book",
+                room_stars_desc: "Direct contact with nature and a magical view of the starry sky of the sertão. Queen bed + Single and outdoor kitchen.",
+                room_felipe_desc: "Our largest suite. Exceptional view of the Grotão da Esperança. Queen bed + Expandable single and private ensuite bathroom.",
+                room_mika_desc: "Cozy with a window opening to the balcony. Double bed + single and private bathroom.",
+                cap_3: "Up to 3 guests",
+                room_daco_desc: "Economical option with a view of the cliffs. Private external bathroom (next to the room).",
+                room_house_title: "Casa Barreirinho (Entire House)",
+                room_house_desc: "Total privacy for your family or group. 3 bedrooms, living room, full kitchen, and exclusive structure.",
+                cap_6: "Up to 6 guests",
+                btn_consult: "Inquire",
+                acc_note: "* Reference average prices for 2 people (except entire house). Values may vary by season. Additional person: R$ 80.00. Children: Babies < 2 free. 2-12 years pay 50% of extra charge.",
+                gas_tag: "Flavors of the Sertão",
+                gas_title: "Affective Cuisine",
+                gas_desc: "Our cook <strong>Dayane Dallas</strong> prepares dishes with local ingredients and lots of care. Breakfast includes fresh fruits, tapioca, couscous, and sourdough bread.",
+                gas_breakfast: "Breakfast",
+                gas_lunch: "Lunch or Dinner",
+                gas_lunch_note: "Order by 4 PM the day before",
+                gas_snack: "Trail Snack",
+                gas_snack_note: "Natural bread, cold cuts, couscous",
+                gas_kitchen_fee: "Guest kitchen use fee: R$ 10.00/person",
+                serv_tag: "Adventure",
+                serv_title: "Services & Extras",
+                serv_transfer: "Petrolina Airport Transfer",
+                serv_transfer_desc: "Safe and comfortable transfer.",
+                serv_transfer_price: "R$ 650 (One way) | R$ 1200 (Round trip)",
+                serv_bike: "Mountain Bike Rental",
+                serv_bike_desc: "Explore the trails on two wheels. Discount for 2 bikes.",
+                serv_bike_price: "R$ 60.00 / day",
+                serv_laundry: "Laundry",
+                serv_laundry_desc: "Modern machine. Includes soap and softener.",
+                serv_laundry_price: "R$ 20.00 / use",
+                serv_poles: "Trekking Poles",
+                serv_poles_desc: "Modern and adjustable for your comfort.",
+                serv_poles_price: "R$ 10.00 / day",
+                soc_tag: "Tourism with Purpose",
+                soc_title: "Your Stay Transforms Lives",
+                soc_desc: "Casa Barreirinho is a social enterprise connected to <strong>ProBrasil Nordeste</strong>. Part of the revenue is reinvested directly into educational and social projects in Coronel José Dias. By staying here, you help keep local culture and education alive.",
+                soc_edu_title: "Education",
+                soc_edu_desc: "Direct support to schools and children in the region.",
+                soc_dev_title: "Development",
+                soc_dev_desc: "Income and employment generation for the local community.",
+                soc_quote: '"Sustainable tourism is what leaves the forest standing and the community strong."',
+                map_title: "How to Get Here",
+                address_full: "Access Road to Serra da Capivara National Park, Barreirinho, Coronel José Dias/PI, Brazil, ZIP 64793-000",
+                hero_desc_short: "Main access road to the National Park. Near Pedra Furada and Museum of Nature.",
+                foot_contact: "Contact Us",
+                foot_links: "Useful Links",
+                foot_policy: "Cancellation Policy",
+                foot_directions: "Get Directions",
+                foot_newsletter: "Newsletter",
+                foot_newsletter_desc: "Receive promotions and news from the Park.",
+                foot_rights: "All rights reserved.",
+                foot_dev: "Developed with support from ProBrasil"
+            },
+            de: {
+                nav_accom: "Unterkünfte",
+                nav_services: "Dienstleistungen",
+                nav_food: "Gastronomie",
+                nav_social: "Soziales Engagement",
+                nav_loc: "Standort",
+                nav_reserve: "Buchen",
+                hero_title_html: 'Weltkulturerbe <br><span class="italic font-light">zum Greifen nah</span>',
+                hero_desc: "Privilegierte Lage am Eingang zum Nationalpark Serra da Capivara. Pool, 100 Mbit/s WLAN und der beste Blick auf die Felswände.",
+                hero_btn_check: "Verfügbarkeit prüfen",
+                hero_btn_rooms: "Zimmer ansehen",
+                feat_wifi: "Internet 100 Mbit/s",
+                feat_pool: "Exklusiver Pool",
+                feat_museum: "Neben dem Museum",
+                feat_rating: "9.4 Bewertung Booking",
+                video_title: "Schauen Sie sich dieses erstaunliche Video an",
+                acc_tag: "Unsere Unterkünfte",
+                acc_title: "Wählen Sie Ihren Rückzugsort",
+                acc_desc: "Vom Charme der Chalets bis zu den günstigen Suiten. Alle Zimmer verfügen über Klimaanlage und Minibar.",
+                per_night: "/Nacht",
+                badge_exclusive: "Exklusivste",
+                badge_bestprice: "Bester Preis",
+                room_vista_desc: "Am höchsten Punkt des Anwesens. Panoramablick auf die Felswände. Queensize-Bett + Einzelbett, Außenküche und Veranda.",
+                cap_4: "Bis zu 4 Personen",
+                btn_book: "Buchen",
+                room_stars_desc: "Direkter Kontakt mit der Natur und ein magischer Blick auf den Sternenhimmel des Sertão. Queensize-Bett + Einzelbett und Außenküche.",
+                room_felipe_desc: "Unsere größte Suite. Außergewöhnlicher Blick auf die Grotão da Esperança. Queensize-Bett + ausziehbares Einzelbett und eigenes Bad.",
+                room_mika_desc: "Gemütlich mit Fenster zur Veranda. Doppelbett + Einzelbett und eigenes Bad.",
+                cap_3: "Bis zu 3 Personen",
+                room_daco_desc: "Günstige Option mit Blick auf die Felswände. Eigenes Außenbad (neben dem Zimmer).",
+                room_house_title: "Casa Barreirinho (Ganzes Haus)",
+                room_house_desc: "Absolute Privatsphäre für Ihre Familie oder Gruppe. 3 Schlafzimmer, Wohnzimmer, voll ausgestattete Küche und exklusive Struktur.",
+                cap_6: "Bis zu 6 Personen",
+                btn_consult: "Anfragen",
+                acc_note: "* Durchschnittspreise für 2 Personen (außer ganzes Haus). Preise können je nach Saison variieren. Zusätzliche Person: R$ 80,00. Kinder: Babys < 2 frei. 2-12 Jahre zahlen 50% Aufschlag.",
+                gas_tag: "Aromen des Sertão",
+                gas_title: "Affektive Küche",
+                gas_desc: "Unsere Köchin <strong>Dayane Dallas</strong> bereitet Gerichte mit lokalen Zutaten und viel Liebe zu. Das Frühstück umfasst frisches Obst, Tapioka, Couscous und Sauerteigbrot.",
+                gas_breakfast: "Frühstück",
+                gas_lunch: "Mittag- oder Abendessen",
+                gas_lunch_note: "Bestellung bis 16 Uhr am Vortag",
+                gas_snack: "Wandersnack",
+                gas_snack_note: "Naturbrot, Aufschnitt, Couscous",
+                gas_kitchen_fee: "Küchennutzungsgebühr: R$ 10,00/Person",
+                serv_tag: "Abenteuer",
+                serv_title: "Dienstleistungen & Extras",
+                serv_transfer: "Transfer Flughafen Petrolina",
+                serv_transfer_desc: "Sicherer und komfortabler Transfer.",
+                serv_transfer_price: "R$ 650 (Einzelfahrt) | R$ 1200 (Hin & Zurück)",
+                serv_bike: "Mountainbike-Verleih",
+                serv_bike_desc: "Erkunden Sie die Wege auf zwei Rädern. Rabatt für 2 Fahrräder.",
+                serv_bike_price: "R$ 60,00 / Tag",
+                serv_laundry: "Wäscherei",
+                serv_laundry_desc: "Moderne Maschine. Inklusive Seife und Weichspüler.",
+                serv_laundry_price: "R$ 20,00 / Nutzung",
+                serv_poles: "Wanderstöcke",
+                serv_poles_desc: "Modern und verstellbar für Ihren Komfort.",
+                serv_poles_price: "R$ 10,00 / Tag",
+                soc_tag: "Tourismus mit Zweck",
+                soc_title: "Ihr Aufenthalt verändert Leben",
+                soc_desc: "Casa Barreirinho ist ein soziales Unternehmen, das mit <strong>ProBrasil Nordeste</strong> verbunden ist. Ein Teil der Einnahmen fließt direkt in Bildungs- und Sozialprojekte in Coronel José Dias. Mit Ihrem Aufenthalt helfen Sie, die lokale Kultur und Bildung lebendig zu erhalten.",
+                soc_edu_title: "Bildung",
+                soc_edu_desc: "Direkte Unterstützung für Schulen und Kinder der Region.",
+                soc_dev_title: "Entwicklung",
+                soc_dev_desc: "Einkommens- und Beschäftigungsschaffung für die lokale Gemeinschaft.",
+                soc_quote: '"Nachhaltiger Tourismus ist der, der den Wald stehen lässt und die Gemeinschaft stärkt."',
+                map_title: "Anfahrt",
+                address_full: "Zufahrtsstraße zum Nationalpark Serra da Capivara, Barreirinho, Coronel José Dias/PI, Brasilien, PLZ 64793-000",
+                hero_desc_short: "Hauptzufahrtsstraße zum Nationalpark. In der Nähe von Pedra Furada und dem Museum der Natur.",
+                foot_contact: "Kontaktieren Sie uns",
+                foot_links: "Nützliche Links",
+                foot_policy: "Stornierungsbedingungen",
+                foot_directions: "Anfahrt",
+                foot_newsletter: "Newsletter",
+                foot_newsletter_desc: "Erhalten Sie Angebote und Neuigkeiten aus dem Park.",
+                foot_rights: "Alle Rechte vorbehalten.",
+                foot_dev: "Entwickelt mit Unterstützung von ProBrasil"
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Update text content
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    // Check if the original text had HTML tags inside (like <strong> or <br>)
+                    // If the translation also contains HTML, use innerHTML
+                    if (translations[lang][key].includes('<')) {
+                        element.innerHTML = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
